@@ -54,7 +54,6 @@ esac
 
 topic "Updating apt caches"
 apt-get $APT_OPTIONS update | indent
-curl -sL https://deb.nodesource.com/setup_12.x | -E bash -
 apt-get $$APT_OPTIONS install nodejs npm
 for PACKAGE in $PACKAGES; do
   if [[ $PACKAGE == *deb ]]; then
