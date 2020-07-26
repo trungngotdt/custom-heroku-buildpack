@@ -54,8 +54,8 @@ esac
 
 topic "Updating apt caches"
 apt-get $APT_OPTIONS update | indent
-apt-get $APT_OPTIONS upgrade | indent
-apt-get $APT_OPTIONS install -f nodejs npm | indent
+apt-get $APT_OPTIONS -y upgrade | indent
+apt-get $APT_OPTIONS install -y -f nodejs npm | indent
 for PACKAGE in $PACKAGES; do
   if [[ $PACKAGE == *deb ]]; then
     PACKAGE_NAME=$(basename $PACKAGE .deb)
